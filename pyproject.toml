@@ -1,11 +1,18 @@
 [project]
-name = "ml-sandbox"
+name = "gene-expression-prediction"
 version = "0.0.1"
 authors = [{ name = "David Tokar", email = "1413david@gmail.com" }]
-description = "Local ML sandbox"
+description = "Uses epigenetic information to predict gene expression"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "ipywidgets>=8.1.7",
+    "pyarrow>=21.0.0",
+    "pybigwig>=0.3.24",
+    "pyranges>=0.1.4",
+    "torch>=2.9.0",
+    "tqdm>=4.67.1",
+]
 
 [project.optional-dependencies]
 dev = [
