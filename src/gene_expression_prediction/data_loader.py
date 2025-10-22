@@ -441,7 +441,6 @@ class BigWigReader:
 
         return pyBigWig.open(str(final_path))
 
-
     @property
     def dnase_x1(self) -> pyBigWig.pyBigWig:
         if self._dnase_x1 is None:
