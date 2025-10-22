@@ -1,5 +1,5 @@
 data/
-
+src/gene_expression_prediction/checkpoints_promoter_only/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]

@@ -566,3 +566,19 @@ class BigWigReader:
         if self._h3k36me3_x3 is None:
             self._h3k36me3_x3 = self._load_bigwig("h3k36me3", "X3")
         return self._h3k36me3_x3
+
+
+gene_info_df = GeneReader("/workspaces/Gene-Expression-Prediction/data").cage_train_x1_train_info
+
+
+print(gene_info_df.head())
+
+# print("PLUS STRAND GENES:")
+# print(gene_info_df[gene_info_df['strand'] == '+'].head(3)[
+#     ['chr', 'start', 'end', 'TSS_start', 'TSS_end', 'strand', 'gene_name']
+# ])
+
+# print("\nMINUS STRAND GENES:")
+# print(gene_info_df[gene_info_df['strand'] == '-'].head(3)[
+#     ['chr', 'start', 'end', 'TSS_start', 'TSS_end', 'strand', 'gene_name']
+# ])

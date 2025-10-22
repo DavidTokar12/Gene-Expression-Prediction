@@ -133,7 +133,7 @@ def _create_multiscale_sequence_tensor(
     print("Multi-resolution binning configuration:")
     print(f"{'='*60}")
     print(f"  Upstream distal:   {n_distal_bins_per_side} bins x {distal_bin_size}bp = {distal_span}bp")
-    print(f"  Promoter:          {n_promoter_bins} bins × {promoter_bin_size}bp = {2*promoter_window_size}bp")
+    print(f"  Promoter:          {n_promoter_bins} bins x {promoter_bin_size}bp = {2*promoter_window_size}bp")
     print(f"  Downstream distal: {n_distal_bins_per_side} bins x {distal_bin_size}bp = {distal_span}bp")
     print(f"  Total bins:        {n_total_bins}")
     print(f"  Total span:        {2*distal_window_size}bp ({-distal_window_size} to +{distal_window_size})")
@@ -235,19 +235,19 @@ def _create_multiscale_sequence_tensor(
     
     # Final validation
     if error_genes:
-        print(f"\n⚠️  WARNING: Encountered errors in {len(error_genes)} genes")
+        print("WARNING: Encountered errors in {len(error_genes)} genes")
     
     if np.isnan(signal_tensor).any():
-        print(f"\n⚠️  WARNING: Found NaN in {len(nan_genes)} genes: {nan_genes[:10]}")
+        print("WARNING: Found NaN in {len(nan_genes)} genes: {nan_genes[:10]}")
         print("Replacing all NaN with 0.0")
         signal_tensor = np.nan_to_num(signal_tensor, nan=0.0, posinf=0.0, neginf=0.0)
     
     if np.isinf(signal_tensor).any():
-        print(f"\n⚠️  WARNING: Found Inf values in tensor")
+        print("WARNING: Found Inf values in tensor")
         print("Replacing all Inf with 0.0")
         signal_tensor = np.nan_to_num(signal_tensor, nan=0.0, posinf=0.0, neginf=0.0)
     
-    print(f"\n✅ Multiscale tensor created successfully:")
+    print("Multiscale tensor created successfully:")
     print(f"   Shape: {signal_tensor.shape}")
     print(f"   Range: [{signal_tensor.min():.3f}, {signal_tensor.max():.3f}]")
     print(f"   NaN: {np.isnan(signal_tensor).any()}, Inf: {np.isinf(signal_tensor).any()}\n")
