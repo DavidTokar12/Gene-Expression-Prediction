@@ -568,7 +568,9 @@ class BigWigReader:
         return self._h3k36me3_x3
 
 
-gene_info_df = GeneReader("/workspaces/Gene-Expression-Prediction/data").cage_train_x1_train_info
+gene_info_df = GeneReader(
+    "/workspaces/Gene-Expression-Prediction/data"
+).cage_train_x1_train_info
 
 
 print(gene_info_df.head())
